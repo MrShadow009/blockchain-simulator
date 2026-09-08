@@ -1,0 +1,64 @@
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "BlockSim - Interactive Blockchain Simulator & Visualizer",
+  description: "BlockSim is an interactive blockchain simulator to visualize mining, create wallets, and send transactions in real-time. Learn blockchain and Bitcoin mining easily.",
+  metadataBase: new URL('https://shahvandit8.github.io/blockchain-simulator/'),
+  keywords: ["Blockchain Simulator", "Blockchain Visualizer", "Interactive Blockchain", "BlockSim", "Learn Blockchain", "Block Mining Simulator", "Bitcoin Mining Simulator", "Crypto Mining Visualization", "Blockchain Development", "Cryptocurrency Transactions", "Blockchain Learning Tool", "Real-time Blockchain", "Next.js Blockchain App", "Blockchain Education", "Decentralized Ledger", "Blockchain Demo", "Cryptocurrency Wallet Simulation", "Digital Currency Transactions"],
+  authors: [{ name: "Vandit Shah", url: "https://github.com/shahvandit8" }],
+  category: "Blockchain Technology",
+  openGraph: {
+    title: "BlockSim - Interactive Blockchain Simulator & Visualizer",
+    description: "BlockSim is an interactive blockchain simulator to visualize mining, create wallets, and send transactions in real-time. Learn blockchain and Bitcoin mining easily.",
+    url: 'https://shahvandit8.github.io/blockchain-simulator/',
+    siteName: "BlockSim",
+    type: "website",
+    locale: "en_US",
+    images: [{
+      url: "https://raw.githubusercontent.com/ShahVandit8/repo-storage/refs/heads/main/blockchain-simulator/ogimage/og.png",
+      width: 1200,
+      height: 630,
+      alt: "BlockSim - Interactive Blockchain Simulator & Visualizer",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BlockSim - Interactive Blockchain Simulator & Visualizer",
+    description: "BlockSim is an interactive blockchain simulator to visualize mining, create wallets, and send transactions in real-time. Learn blockchain and Bitcoin mining easily.",
+    images: [{
+      url: "https://raw.githubusercontent.com/ShahVandit8/repo-storage/refs/heads/main/blockchain-simulator/ogimage/og.png",
+      width: 1200,
+      height: 630,
+      alt: "BlockSim - Interactive Blockchain Simulator & Visualizer",
+    }],
+  },
+  alternates: {
+    canonical: "https://shahvandit8.github.io/blockchain-simulator/",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
